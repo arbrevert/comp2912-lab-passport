@@ -20,7 +20,9 @@ const githubLogin = new GitHubStrategy(
   {
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/github/callback"
+    // callbackURL: "http://localhost:8000/auth/github/callback"
+    // combine github callback with button click
+    callbackURL: "http://localhost:8000/auth/github"
   },
   function (accessToken, refreshToken, profile, cb) {
     // console.log(profile);
