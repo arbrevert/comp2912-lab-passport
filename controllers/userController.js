@@ -9,6 +9,13 @@ const getUserByEmailIdAndPassword = (email, password) => {
   }
   return null;
 };
+
+const getOrCreateUserByGitHubProfile = (profile) => {
+  console.log(profile);
+  let user = userModel.getOrCreateGitHubUser(profile);
+  return user;
+}
+
 const getUserById = (id) => {
   let user = userModel.findById(id);
   if (user) {
@@ -23,5 +30,6 @@ function isUserValid(user, password) {
 
 module.exports = {
   getUserByEmailIdAndPassword,
+  getOrCreateUserByGitHubProfile,
   getUserById,
 };

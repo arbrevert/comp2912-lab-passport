@@ -1,3 +1,5 @@
+const GITHUB_OFFSET=1000000;
+
 const database = [
   {
     id: 1,
@@ -34,6 +36,20 @@ const userModel = {
     }
     throw new Error(`Couldn't find user with id: ${id}`);
   },
+  getOrCreateGitHubUser: (gitHubProfile) => {
+    const id = Number(GITHUB_OFFSET) + Number(gitHubProfile.id);
+    const user = database.find((user) => user.id === id);
+    if (user) {
+      return user;
+    } else {
+      const newUser = {
+        id: id,
+        name: gitHubProfile.username,
+      }
+      database.push(newUser);
+      return newUser;
+    }
+  }
 };
 
 module.exports = { database, userModel };
