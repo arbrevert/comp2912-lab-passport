@@ -1,3 +1,5 @@
+// local user has lower id
+// github user has higher id
 const GITHUB_OFFSET=1000000;
 
 const database = [

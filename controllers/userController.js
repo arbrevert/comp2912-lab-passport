@@ -11,7 +11,7 @@ const getUserByEmailIdAndPassword = (email, password) => {
 };
 
 const getOrCreateUserByGitHubProfile = (profile) => {
-  console.log(profile);
+  // console.log(profile);
   let user = userModel.getOrCreateGitHubUser(profile);
   return user;
 }
