@@ -14,10 +14,18 @@ router.post(
   })
 );
 
-router.get("/github",
-  passport.authenticate('github'));
+// 'login with github' button
+// router.get("/github",
+//   passport.authenticate('github'));
+// github callback url
+// router.get("/github/callback",
+//   passport.authenticate("github", {
+//     successRedirect: "/dashboard",
+//     failureRedirect: "/auth/login",
+//   }));
 
-router.get("/github/callback",
+// combine github callback with button click
+router.get("/github",
   passport.authenticate("github", {
     successRedirect: "/dashboard",
     failureRedirect: "/auth/login",
