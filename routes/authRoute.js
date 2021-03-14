@@ -4,13 +4,17 @@ const { forwardAuthenticated } = require("../middleware/checkAuth");
 
 const router = express.Router();
 
-router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
+router.get("/login", forwardAuthenticated,
+  (req, res) => {
+    res.render("login", {error: req.flash('error')});
+  });
 
 router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/dashboard",
     failureRedirect: "/auth/login",
+    failureFlash: true,
   })
 );
 

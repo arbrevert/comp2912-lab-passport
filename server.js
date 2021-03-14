@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
+const flash = require("connect-flash");
 const path = require("path");
 const port = process.env.port || 8000;
 
@@ -32,6 +33,7 @@ const indexRoute = require("./routes/indexRoute");
 app.use(express.json());
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
