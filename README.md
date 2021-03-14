@@ -13,3 +13,9 @@
 * if login user role is not `admin`, will redirect to /dashboard, which will show the role.
 * use `GET` method to revoke session, not ideal but works.
 * manipulating sessionStore works for this senario, it is not a general solution.
+
+## challenge1
+* status - done
+* goal
+  * show login failure error message from validation callback
+  * error message should dispear after refrsh

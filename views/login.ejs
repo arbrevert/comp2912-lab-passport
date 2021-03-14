@@ -26,6 +26,9 @@
             placeholder="Enter Password"
           />
         </div>
+        <% if (error) { %>
+          <p class="alert-danger"><%= error %></p>
+        <% } %>
         <button type="submit" class="btn btn-primary btn-block">Login</button>
       </form>
       <P>OR</P>
